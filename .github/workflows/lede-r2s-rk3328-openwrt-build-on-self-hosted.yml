@@ -49,7 +49,7 @@ jobs:
           cd lede
           make -j$(nproc) || make -j1 V=s
           
-      - name: Assemble Artifact
+      - name: Prepare artifact
         run: |
           cd lede
           rm -rf ./artifact/
@@ -62,12 +62,30 @@ jobs:
           cp -rf $(find ./bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./artifact/buildinfo/
           cp .config ./artifact/
       
-      - name: Upload Artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: Friendlyarm Nanopi R2s lede sysupgrade img
-          path: ./lede/artifact/
+      #- name: Upload Artifact
+      #  uses: actions/upload-artifact@master
+      #  with:
+       #   name: Friendlyarm Nanopi R2s lede sysupgrade img
+       #   path: ./lede/artifact/
           
+      - name: Deliver buildinfo
+        uses: actions/upload-artifact@v2
+        with:
+          name: R2s_OpenWrt_buildinfo
+          path: ./lede/artifact/buildinfo/
+
+      - name: Deliver package
+        uses: actions/upload-artifact@v2
+        with:
+          name: R2s_OpenWrt_package
+          path: ./lede/artifact/package/
+
+      - name: Deliver firmware
+        uses: actions/upload-artifact@v2
+        with:
+          name: R2s_OpenWrt_firmware
+          path: ./lede/artifact/firmware/
+
       - name: Upload release asset
         if: github.event == 'release'
         uses: svenstaro/upload-release-action@v2
