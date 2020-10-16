@@ -22,6 +22,7 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 点击它，按【Q】继续<br>
 然后输入<code>cd lede && make menuconfig</code><br>
 定制你要编译的组件<br>
+你也可以修改默认登陆 IP
 完成后输入【exit】退出<br>
 默认半小时无动作会跳过这个环节<br>
 你也可以直接事先编辑文件 r2s-rk3328-config<br>
