@@ -14,86 +14,11 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     
     steps:
-      - name: 初始化编译环境
-        run: |
-          sudo apt-get update && sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync
-          
-      - name: 下载 lede 源码
-        run: |
-          rm -rf lede && git clone https://github.com/coolsnowwolf/lede
-        
-      - name: 定制化 feeds.conf.default
-        run: |
-          cd lede
-          echo 'src-git helloworld https://github.com/fw876/helloworld' >> feeds.conf.default
-        
-      - name: Update feeds
-        run: |
-          cd lede && ./scripts/feeds clean && ./scripts/feeds update -a && ./scripts/feeds install -a
-          
-      - name: Generate configuration file
-        run: |
-          cd lede
-          rm -f ./.config*
-          wget -c https://raw.githubusercontent.com/szdosar/lede-for-r2s/main/r2s-rk3328-config -O .config
-          
-      - name: SSH connection to Actions
-        uses: p3terx/debugger-action@main
-        if: env.SSH_ACTIONS == 'true'
-          
-      - name: Make download
-        run: |
-          cd lede
-          make download -j8 || make download -j1 V=s
-          rm -rf $(find ./dl/ -size -1024c)
-          df -h
-          
-      - name: Compile firmware
-        run: |
-          cd lede
-          make -j$(nproc) || make -j1 V=s
-          
-      - name: Prepare artifact
-        run: |
-          cd lede
-          rm -rf ./artifact/
-          mkdir -p ./artifact/firmware
-          mkdir -p ./artifact/package
-          mkdir -p ./artifact/buildinfo
-          rm -rf $(find ./bin/targets/ -type d -name "packages")
-          cp -rf $(find ./bin/targets/ -type f) ./artifact/firmware/
-          cp -rf $(find ./bin/packages/ -type f -name "*.ipk") ./artifact/package/
-          cp -rf $(find ./bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./artifact/buildinfo/
-          cp .config ./artifact/
-      
-      #- name: Upload Artifact
-      #  uses: actions/upload-artifact@master
-      #  with:
-       #   name: Friendlyarm Nanopi R2s lede sysupgrade img
-       #   path: ./lede/artifact/
-          
-      - name: Deliver buildinfo
-        uses: actions/upload-artifact@v2
-        with:
-          name: R2s_OpenWrt_buildinfo
-          path: ./lede/artifact/buildinfo/
-
-      - name: Deliver package
-        uses: actions/upload-artifact@v2
-        with:
-          name: R2s_OpenWrt_package
-          path: ./lede/artifact/package/
-
-      - name: Deliver firmware
-        uses: actions/upload-artifact@v2
-        with:
-          name: R2s_OpenWrt_firmware
-          path: ./lede/artifact/firmware/
 
       - name: Upload release asset
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.YOURTOKEN }}
+          repo_token: ${{ secrets.sec_token }}
           file: ./lede/artifact/firmware/*
           tag: ${{ github.ref }}
           file_glob: true
