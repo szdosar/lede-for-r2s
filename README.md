@@ -42,4 +42,4 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 
 ## 科学上网
 * 引用了 helloworld 项目，地址 https://github.com/fw876/helloworld<br>
-* 采用 ssr-plus
+* 采用 ShadowSocksR Plus+
