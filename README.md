@@ -20,17 +20,23 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 将<code>SSH_ACTIONS: false</code><br>
 改为<code>SSH_ACTIONS: true</code><br>
 流程运行到这，会生成连接网址<br>
-点击它，按【Q】继续<br>
-然后输入<code>cd lede && make menuconfig</code><br>
-定制你要编译的组件<br>
-你还可以修改默认登陆 IP<br>
+如何找到这个链接？<br>
+1.点上方的【Actions】<br>
+2.点正在你正在运行中的流程<br>
+3.点【build】<br>
+5.待流程运行到 SSH connection to Actions 环节<br>
+6.点击它展示的链接<br>
+7.按【Q】继续<br>
+8.然后输入<code>cd lede && make menuconfig</code><br>
+9.定制你要编译的组件<br>
+10.你还可以修改默认登陆 IP<br>
 ** >>>><br>
 通过修改源码中此文件 package/base-files/files/bin/config_generate 的下面代码实现<br>
 <code>lan) ipad=${ipaddr:-"192.168.1.1"} ;;</code><br>
 ** <<<<<br>
 * 退出定制<br>
-完成后输入【exit】可退出 SSH 定制<br>
-默认半小时无动作会跳过这个环节<br>
+1.完成后输入【exit】可退出 SSH 定制<br>
+2.默认半小时无动作会跳过这个环节<br>
 ### 定制编译的方法2--可选项<br>
 编译前，你可事先编辑文件 r2s-rk3328-config 来定制编译的组件<br>
 但你要适当修改流程文件中的这段代码<br>
