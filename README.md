@@ -2,6 +2,7 @@
 * 当前 coolsnowwolf/lede 项目已直接支持 r2s
 * 截至2020年10月16日，Lienol/openwrt 项目未加入支持 r2s
 ![image](https://github.com/szdosar/lede-for-r2s/blob/main/r2s.jpg)
+![image](https://github.com/szdosar/lede-for-r2s/blob/main/r2soverview.png)
 ## 采用 Lean 的 Openwrt 源码仓库
 仓库地址 https://github.com/coolsnowwolf/lede<br>
 原汁原味，无修改<br>
