@@ -36,6 +36,8 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 但你要适当修改流程文件中的这段代码<br>
 <code>wget -c https://raw.githubusercontent.com/szdosar/lede-for-r2s/main/r2s-rk3328-config -O .config</code>
 
+## 触发自动化流程的运行
+* 修改 CHANGELOG.md 文件
 
 ## 感谢
 * Lean<br>
