@@ -49,3 +49,4 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 * 采用 ShadowSocksR Plus+<br>
 * 发布代码引用了项目 Upload files to a GitHub release<br>
 项目地址https://github.com/svenstaro/upload-release-action<br>
+* 灵感来源于悟空的视频
