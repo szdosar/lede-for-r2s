@@ -38,10 +38,10 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 
 
 ## 感谢
-* Lean
+* Lean<br>
 仓库地址 https://github.com/coolsnowwolf/lede<br>
-* fyglinfo
-项目地址 https://github.com/fyglinfo/actions-openwrt-passwall
+* fyglinfo<br>
+项目地址 https://github.com/fyglinfo/actions-openwrt-passwall<br>
 * 引用了 p3terx/debugger-action@main<br>
 新项目地址 https://github.com/P3TERX/ssh2actions<br>
 * 引用了 helloworld 项目<br>
