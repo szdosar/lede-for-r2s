@@ -9,7 +9,7 @@
 FriendlyElec NanoPi R2S 芯片 RK3328
 
 ## 修改默认登陆 IP<br>
-通过修改源码中 package/base-files/files/bin/config_generate 中的下面代码实现<br>
+通过修改源码中这个文件 package/base-files/files/bin/config_generate 的代码实现<br>
 <code>lan) ipad=${ipaddr:-"192.168.1.1"} ;;</code><br>
 如何修改？请看下一步
 
