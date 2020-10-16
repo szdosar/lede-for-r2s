@@ -8,7 +8,8 @@
 默认登陆 IP <code>192.168.1.1</code><br>
 初始密码 <code>password</code>
 * 我的自动化流程用了自有服务器<br>
-可将流程文件中的<code>runs-on: self-hosted</code><br>
+如果你没有服务器，就用 github 的默认服务器<br>
+方法：将流程文件中的<code>runs-on: self-hosted</code><br>
 改为<code>runs-on: ubuntu-latest</code>
 
 ## 适用硬件
