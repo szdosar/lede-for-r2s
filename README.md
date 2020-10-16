@@ -15,7 +15,7 @@
 FriendlyElec NanoPi R2S 芯片 RK3328
 
 ## 定制编译的组件
-### 定制编译的方法1<br>
+### 定制编译的方法1--可选项<br>
 * 要触发定制，请修改流程文件<br>
 将<code>SSH_ACTIONS: false</code><br>
 改为<code>SSH_ACTIONS: true</code><br>
@@ -31,7 +31,7 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 * 退出定制<br>
 完成后输入【exit】可退出 SSH 定制<br>
 默认半小时无动作会跳过这个环节<br>
-### 定制编译的方法2<br>
+### 定制编译的方法2--可选项<br>
 编译前，你可事先编辑文件 r2s-rk3328-config 来定制编译的组件<br>
 但你要适当修改流程文件中的这段代码<br>
 <code>wget -c https://raw.githubusercontent.com/szdosar/lede-for-r2s/main/r2s-rk3328-config -O .config</code>
