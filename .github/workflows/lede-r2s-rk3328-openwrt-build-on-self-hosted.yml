@@ -15,9 +15,43 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync
           
+      - name: 下载 lede 源码
+        run: |
+          rm -rf lede && git clone https://github.com/coolsnowwolf/lede
+        
+      - name: 定制化 feeds.conf.default
+        run: |
+          cd lede
+          echo 'src-git helloworld https://github.com/fw876/helloworld' >> feeds.conf.default
+        
+      - name: Update feeds
+        run: |
+          cd lede && ./scripts/feeds clean && ./scripts/feeds update -a && ./scripts/feeds install -a
+          
+      - name: Generate configuration file
+        run: |
+          cd lede
+          rm -f ./.config*
+          wget -c https://raw.githubusercontent.com/szdosar/lede-for-r2s/main/r2s-rk3328-config -O .config
+          
+      - name: SSH connection to Actions
+        uses: p3terx/debugger-action@main
+          
+      - name: Make download
+        run: |
+          cd lede
+          make download -j8 || make download -j1 V=s
+          rm -rf $(find ./dl/ -size -1024c)
+          df -h
+          
+      - name: Compile firmware
+        run: |
+          cd lede
+          make -j$(nproc) || make -j1 V=s
+          
       - name: Assemble Artifact
         run: |
-          cd ~/lede
+          cd lede
           rm -rf ./artifact/
           mkdir -p ./artifact/firmware
           mkdir -p ./artifact/package
@@ -35,5 +69,5 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: Friendlyarm Nanopi R2s lede sysupgrade img
-          path: ~/lede/artifact/
+          path: ./artifact/
           
