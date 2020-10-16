@@ -1,4 +1,4 @@
-# lede-for-r2s 在线编译项目
+# lede-for-r2s 固件在线编译项目
 * 当前 coolsnowwolf/lede 项目已直接支持 r2s
 * 截至2020年10月16日，Lienol/openwrt 项目未加入支持 r2s
 ![image](https://github.com/szdosar/lede-for-r2s/blob/main/r2s.jpg)
