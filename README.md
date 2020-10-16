@@ -3,7 +3,7 @@
 仓库地址 https://github.com/coolsnowwolf/lede<br>
 原汁原味<br>
 默认登陆IP<br>
-<code>192.168.1.1</code>
+<code>192.168.1.1</code><br>
 密码<br>
 <code>password</code>
 
