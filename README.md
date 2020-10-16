@@ -8,6 +8,10 @@
 ## 适用硬件
 FriendlyElec NanoPi R2S 芯片 RK3328
 
+## 修改默认登陆 IP<br>
+通过修改package/base-files/files/bin/config_generate中的下面代码实现
+<code>lan) ipad=${ipaddr:-"192.168.1.1"} ;;</code>
+
 ## 定制编译的组件
 ### 定制编译的步骤<br>
 * 要触发定制，请注销 actions 中这两行前面的#号<br>
@@ -21,10 +25,6 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 你也可以直接事先编辑文件 r2s-rk3328-config<br>
 但你要适当修改 actions 中的这段代码<br>
 <code>wget -c https://raw.githubusercontent.com/szdosar/lede-for-r2s/main/r2s-rk3328-config -O .config</code>
-
-* 修改默认登陆 IP<br>
-通过修改package/base-files/files/bin/config_generate中的下面代码实现
-<code>lan) ipad=${ipaddr:-"192.168.1.1"} ;;</code>
 
 * 引用了 p3terx/debugger-action@main<br>
 新项目地址 https://github.com/P3TERX/ssh2actions
