@@ -1,6 +1,6 @@
 # lede-for-r2s 固件在线编译项目
-* 当前 coolsnowwolf/lede 项目已直接支持 r2s
-* 截至2020年10月16日，Lienol/openwrt 项目未加入支持 r2s
+* 直接下载 https://github.com/szdosar/lede-for-r2s/releases
+
 ![image](https://github.com/szdosar/lede-for-r2s/blob/main/r2soverview.png)
 ## 采用 Lean 的 Openwrt 源码仓库
 仓库地址 https://github.com/coolsnowwolf/lede<br>
@@ -59,3 +59,5 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 * 发布代码引用了项目 Upload files to a GitHub release<br>
 项目地址https://github.com/svenstaro/upload-release-action<br>
 * 灵感来源于悟空的视频
+* 当前 coolsnowwolf/lede 项目已直接支持 r2s
+* 截至2020年10月16日，Lienol/openwrt 项目未加入支持 r2s
