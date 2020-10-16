@@ -38,9 +38,11 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 
 
 ## 感谢
+* Lean
 * 引用了 p3terx/debugger-action@main<br>
 新项目地址 https://github.com/P3TERX/ssh2actions<br>
 * 引用了 helloworld 项目<br>
 项目地址 https://github.com/fw876/helloworld<br>
 * 采用 ShadowSocksR Plus+<br>
-* 发布代码引用了 https://github.com/svenstaro/upload-release-action<br>
+* 发布代码引用了项目Upload files to a GitHub release<br>
+项目地址https://github.com/svenstaro/upload-release-action<br>
