@@ -18,5 +18,5 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 你也可以直接事先编辑文件 r2s-rk3328-config，但你要适当修改 actiongs 中的这段代码<br>
 <code>wget -c https://raw.githubusercontent.com/szdosar/lede-for-r2s/main/r2s-rk3328-config -O .config</code>
 
-## SS 引用了 helloworld
+## 引用了 helloworld 项目以便科学上网
 项目地址 https://github.com/fw876/helloworld
