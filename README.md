@@ -5,7 +5,7 @@
 默认登陆 IP <code>192.168.1.1</code><br>
 初始密码 <code>password</code>
 
-## 硬件
+## 适用硬件
 FriendlyElec NanoPi R2S 芯片 RK3328
 
 ## 定制编译的组件
