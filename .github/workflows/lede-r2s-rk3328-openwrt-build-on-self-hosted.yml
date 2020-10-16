@@ -23,16 +23,16 @@ jobs:
           cd ~/lede
           rm -rf ./artifact/
           mkdir -p ./artifact/
-          #find code/out/ -name "FriendlyWrt_*img*" | xargs -I{} sh -c 'f=$(basename $1); zip -r -j "./artifact/${f}.zip" $1' sh {} \;
-          find ~/lede/bin/targets/rockchip/armv8 -name "openwrt*-sysupgrade.img.gz" | xargs -I{} sh -c 'f=$(basename $1); zip -r -j "./artifact/${f}.zip" $1' sh {} \;
+          cp ~/lede/bin/targets/rockchip/armv8/openwrt*-sysupgrade.img.gz ./artifact/
+          #find ~/lede/bin/targets/rockchip/armv8 -name "openwrt*-sysupgrade.img.gz" | xargs -I{} sh -c 'f=$(basename $1); zip -r -j "./artifact/${f}.zip" $1' sh {} \;
           cp ~/lede/.config ./artifact/
           
-      - name: SSH connection to Actions
-        uses: p3terx/debugger-action@main
+      #- name: SSH connection to Actions
+      #  uses: p3terx/debugger-action@main
       
       - name: Upload Artifact
         uses: actions/upload-artifact@master
         with:
-          name: openwrt rockchip armv8 friendlyarm nanopi r2s sysupgrade
+          name: Friendlyarm Nanopi R2s lede sysupgrade img
           path: ~/lede/artifact/
           
