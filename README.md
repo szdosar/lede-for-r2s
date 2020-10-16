@@ -25,10 +25,10 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 -2-.点击正在运行中的流程<br>
 -3-.点击【build】<br>
 -4-.待流程运行到 SSH connection to Actions 环节<br>
--5-.点击显示出来的链接<br>
+-5-.等几分钟，看到显示出来的链接<br>
 它看起来像 https://tmate.io/t/BHhWX7CY7hZJBRNEaVtm9xWJz<br>
--6-.按【Q】或 Ctrl+C 继续<br>
--7-.然后输入<code>cd lede && make menuconfig</code><br>
+-6-.点击链接，然后按【Q】或 Ctrl+C 继续<br>
+-7-.输入命令<code>cd lede && make menuconfig</code><br>
 -8-.定制你要编译的组件<br>
 -9-.你还可以修改默认登陆 IP<br>
 ** >>>><br>
