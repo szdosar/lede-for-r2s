@@ -37,5 +37,5 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 新项目地址 https://github.com/P3TERX/ssh2actions
 但我仍用旧代码<br>
 
-## 引用了 helloworld 项目以便科学上网
-项目地址 https://github.com/fw876/helloworld
+## 科学上网
+引用了 helloworld 项目，地址 https://github.com/fw876/helloworld
