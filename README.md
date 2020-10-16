@@ -40,9 +40,7 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 新项目地址 https://github.com/P3TERX/ssh2actions
 但我仍采用了旧代码<br>
 
-## 科学上网
+## 感谢
 * 引用了 helloworld 项目，地址 https://github.com/fw876/helloworld<br>
-* 采用 ShadowSocksR Plus+
-
-## 发布代码
-* 引用了 https://github.com/svenstaro/upload-release-action
+* 采用 ShadowSocksR Plus+<br>
+* 发布代码引用了 https://github.com/svenstaro/upload-release-action<br>
