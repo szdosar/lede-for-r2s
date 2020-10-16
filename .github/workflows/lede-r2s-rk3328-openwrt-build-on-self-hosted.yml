@@ -23,14 +23,39 @@ jobs:
           cd lede
           echo 'src-git helloworld https://github.com/fw876/helloworld' >> feeds.conf.default
           
-      - name: 定制化 .config
+      - name: Update feeds
         run: |
-          rm -rf lede/.config
-          cp r2s-rk3328-config lede/.config
+          cd lede
+          ./scripts/feeds update -a
+          ./scripts/feeds install -a
+          
+      - name: Generate configuration file
+        run: |
+          rm -f ./.config*
+          
           
       - name: SSH connection to Actions
         uses: p3terx/debugger-action@main
+        
+      - name: Make download
+        run: |
+          cd lede
+          make download -j8 || make download -j1 V=s
+          rm -rf $(find ./dl/ -size -1024c)
+          df -h
           
+      - name: Compile firmware
+        run: |
+          cd lede
+          make -j$(nproc) || make -j1 V=s
+          echo "======================="
+          echo "Space usage:"
+          echo "======================="
+          df -h
+          echo "======================="
+          du -h ./ --max-depth=1
+          du -h /mnt/openwrt/ --max-depth=1 || true
+
       - name: Assemble Artifact
         run: |
           cd ~/lede
