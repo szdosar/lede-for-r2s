@@ -20,10 +20,10 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 然后输入<code>cd lede && make menuconfig</code><br>
 定制你要编译的组件<br>
 你也可以修改默认登陆 IP<br>
-### 修改默认登陆 IP<br>
+** >>修改默认登陆 IP<br>
 通过修改源码中这个文件 package/base-files/files/bin/config_generate 的代码实现<br>
 <code>lan) ipad=${ipaddr:-"192.168.1.1"} ;;</code><br>
-### 修改默认登陆 IP<br>
+** 修改默认登陆 IP <<<br>
 完成后输入【exit】退出<br>
 默认半小时无动作会跳过这个环节<br>
 你也可以直接事先编辑文件 r2s-rk3328-config<br>
