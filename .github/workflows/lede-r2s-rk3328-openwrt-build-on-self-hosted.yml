@@ -6,13 +6,10 @@ on:
       - 'CHANGELOG.md'
 
 jobs:
-
   build:
-
     runs-on: self-hosted
 
     steps:
-
       - name: Checkout
         uses: actions/checkout@master
         with:
@@ -22,7 +19,25 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync
           
-      - name: 下载源代码
+      #- name: 下载源代码
+      #  run: |
+      #    rm -rf ./lede && git clone https://github.com/coolsnowwolf/lede
+          
+      - name: Assemble Artifact
         run: |
-          rm -rf ./lede && git clone https://github.com/coolsnowwolf/lede
+          cd ~/lede
+          rm -rf ./artifact/
+          mkdir -p ./artifact/
+          #find code/out/ -name "FriendlyWrt_*img*" | xargs -I{} sh -c 'f=$(basename $1); zip -r -j "./artifact/${f}.zip" $1' sh {} \;
+          find ~/lede/bin/targets/rockchip/armv8 -name "openwrt*-sysupgrade.img.gz" | xargs -I{} sh -c 'f=$(basename $1); zip -r -j "./artifact/${f}.zip" $1' sh {} \;
+          cp ~/lede/.config ./artifact/
+          
+      - name: SSH connection to Actions
+        uses: p3terx/debugger-action@main
+      
+      - name: Upload Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: openwrt rockchip armv8 friendlyarm nanopi r2s sysupgrade
+          path: ~/lede/artifact/
           
