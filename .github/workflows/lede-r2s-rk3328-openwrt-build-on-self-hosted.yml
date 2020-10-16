@@ -34,8 +34,8 @@ jobs:
           rm -f ./.config*
           wget -c https://raw.githubusercontent.com/szdosar/lede-for-r2s/main/r2s-rk3328-config -O .config
           
-      - name: SSH connection to Actions
-        uses: p3terx/debugger-action@main
+      #- name: SSH connection to Actions
+      #  uses: p3terx/debugger-action@main
           
       - name: Make download
         run: |
@@ -61,9 +61,6 @@ jobs:
           cp -rf $(find ./bin/packages/ -type f -name "*.ipk") ./artifact/package/
           cp -rf $(find ./bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./artifact/buildinfo/
           cp .config ./artifact/
-          
-      #- name: SSH connection to Actions
-      #  uses: p3terx/debugger-action@main
       
       - name: Upload Artifact
         uses: actions/upload-artifact@master
