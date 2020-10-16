@@ -28,8 +28,8 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 通过修改源码中这个文件 package/base-files/files/bin/config_generate 的代码实现<br>
 <code>lan) ipad=${ipaddr:-"192.168.1.1"} ;;</code><br>
 ** 修改默认登陆 IP <<<br>
-* 退出定制
-完成后输入【exit】退出 SSH 定制<br>
+* 退出定制<br>
+完成后输入【exit】可退出 SSH 定制<br>
 默认半小时无动作会跳过这个环节<br>
 ### 定制编译的方法2<br>
 你也可以直接事先编辑文件 r2s-rk3328-config 来定制编译的组件<br>
