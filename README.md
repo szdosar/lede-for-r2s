@@ -9,7 +9,7 @@
 FriendlyElec NanoPi R2S 芯片 RK3328
 
 ## 定制编译的组件
-* 定制编译的步骤<br>
+# 定制编译的步骤<br>
 * 要触发定制，请注销 actions 中这两行前面的#号<br>
 <code>- name: SSH connection to Actions</code><br>
 <code>  uses: p3terx/debugger-action@main</code><br>
