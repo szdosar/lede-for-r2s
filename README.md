@@ -1,11 +1,9 @@
 # lede-for-r2s
 ## 采用 Lean 的 Openwrt 源码仓库
 仓库地址 https://github.com/coolsnowwolf/lede<br>
-原汁原味<br>
-默认登陆IP<br>
-<code>192.168.1.1</code><br>
-密码<br>
-<code>password</code>
+原汁原味，无修改<br>
+默认登陆IP <code>192.168.1.1</code><br>
+初始密码 <code>password</code>
 
 ## 硬件
 FriendlyElec NanoPi R2S 芯片 RK3328
