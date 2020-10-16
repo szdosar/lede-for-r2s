@@ -1,4 +1,4 @@
-# lede-for-r2s
+# lede-for-r2s 在线编译项目
 ## 采用 Lean 的 Openwrt 源码仓库
 仓库地址 https://github.com/coolsnowwolf/lede<br>
 原汁原味，无修改<br>
@@ -9,7 +9,7 @@
 FriendlyElec NanoPi R2S 芯片 RK3328
 
 ## 定制编译的组件
-# 定制编译的步骤<br>
+### 定制编译的步骤<br>
 * 要触发定制，请注销 actions 中这两行前面的#号<br>
 <code>- name: SSH connection to Actions</code><br>
 <code>  uses: p3terx/debugger-action@main</code><br>
