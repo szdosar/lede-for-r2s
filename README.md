@@ -44,5 +44,5 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 * 引用了 helloworld 项目<br>
 项目地址 https://github.com/fw876/helloworld<br>
 * 采用 ShadowSocksR Plus+<br>
-* 发布代码引用了项目Upload files to a GitHub release<br>
+* 发布代码引用了项目 Upload files to a GitHub release<br>
 项目地址https://github.com/svenstaro/upload-release-action<br>
