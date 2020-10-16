@@ -69,5 +69,5 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: Friendlyarm Nanopi R2s lede sysupgrade img
-          path: ./artifact/
+          path: ./lede/artifact/
           
