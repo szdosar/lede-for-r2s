@@ -36,11 +36,11 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 但你要适当修改流程文件中的这段代码<br>
 <code>wget -c https://raw.githubusercontent.com/szdosar/lede-for-r2s/main/r2s-rk3328-config -O .config</code>
 
-* 引用了 p3terx/debugger-action@main<br>
-新项目地址 https://github.com/P3TERX/ssh2actions
-但我仍采用了旧代码<br>
 
 ## 感谢
-* 引用了 helloworld 项目，地址 https://github.com/fw876/helloworld<br>
+* 引用了 p3terx/debugger-action@main<br>
+新项目地址 https://github.com/P3TERX/ssh2actions<br>
+* 引用了 helloworld 项目<br>
+项目地址 https://github.com/fw876/helloworld<br>
 * 采用 ShadowSocksR Plus+<br>
 * 发布代码引用了 https://github.com/svenstaro/upload-release-action<br>
