@@ -60,11 +60,11 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 * 发布代码引用了项目 Upload files to a GitHub release<br>
 项目地址https://github.com/svenstaro/upload-release-action<br>
 * 灵感来源于悟空的视频
+* 截至2020年10月16日，Lienol/openwrt 项目未加入支持 r2s
 * 当前 coolsnowwolf/lede 项目已直接支持 r2s
 >>在 Target System 里选 (Rockchip) --->
 >>在 Subtarget 里选 (RK33XX boards (64 bit)) --->
 >>在 Target Profile 里选 （FriendlyARM NanoPi R2S)
-* 截至2020年10月16日，Lienol/openwrt 项目未加入支持 r2s
-
+![image](https://github.com/szdosar/lede-for-r2s/blob/main/r2s-menuconfig.png)
 ## 附录 config.buildinfo
 https://raw.githubusercontent.com/szdosar/lede-for-r2s/main/config.buildinfo
