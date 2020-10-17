@@ -28,6 +28,7 @@ FriendlyElec NanoPi R2S 芯片 RK3328
 -4-.待流程运行到 SSH connection to Actions 环节<br>
 -5-.等几分钟，看到显示出来的链接<br>
 它看起来像 https://tmate.io/t/BHhWX7CY7hZJBRNEaVtm9xWJz<br>
+![image](https://github.com/szdosar/lede-for-r2s/blob/main/r2s-ssh.png)
 -6-.点击链接，然后按【Q】或 Ctrl+C 继续<br>
 -7-.输入命令<code>cd lede && make menuconfig</code><br>
 -8-.定制你要编译的组件<br>
