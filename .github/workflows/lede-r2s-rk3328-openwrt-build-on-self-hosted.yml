@@ -5,7 +5,7 @@ on:
     paths:
       - 'CHANGELOG.md'
 env:
-  SSH_ACTIONS: true
+  SSH_ACTIONS: false
   TZ: Asia/Shanghai
 
 jobs:
