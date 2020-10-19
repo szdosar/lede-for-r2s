@@ -5,12 +5,12 @@ on:
     paths:
       - 'CHANGELOG.md'
 env:
-  SSH_ACTIONS: false
+  SSH_ACTIONS: true
   TZ: Asia/Shanghai
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     
     steps:
