@@ -24,8 +24,7 @@ jobs:
         
       - name: 定制化 feeds.conf.default
         run: |
-          cd lede
-          echo 'src-git helloworld https://github.com/fw876/helloworld' >> feeds.conf.default
+          cd lede && sed -i -E 's/#(src-git.+)(helloworld.+)/\1\2/' feeds.conf.default
         
       - name: Update feeds
         run: |
@@ -65,12 +64,6 @@ jobs:
           cp -rf $(find ./bin/packages/ -type f -name "*.ipk") ./artifact/package/
           cp -rf $(find ./bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./artifact/buildinfo/
           cp .config ./artifact/
-      
-      #- name: Upload Artifact
-      #  uses: actions/upload-artifact@master
-      #  with:
-       #   name: Friendlyarm Nanopi R2s lede sysupgrade img
-       #   path: ./lede/artifact/
           
       - name: Deliver buildinfo
         uses: actions/upload-artifact@v2
