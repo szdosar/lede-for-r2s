@@ -1,3 +1,6 @@
+## 20201019
+* ubuntu-latest
+
 ## 20201016
 * 添加 samba miniDLNA
 
