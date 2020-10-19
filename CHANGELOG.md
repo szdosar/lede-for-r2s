@@ -1,3 +1,6 @@
+## 20201020
+* 添加对 samba miniDLNA 支持工具
+
 ## 20201019
 * ubuntu-latest
 
