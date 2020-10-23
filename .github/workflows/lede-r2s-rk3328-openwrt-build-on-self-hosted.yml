@@ -37,7 +37,8 @@ jobs:
         run: |
           cd lede
           rm -f ./.config*
-          wget -c https://raw.githubusercontent.com/szdosar/lede-for-r2s/main/r2s-rk3328-config -O .config
+          #wget -c https://raw.githubusercontent.com/szdosar/lede-for-r2s/main/r2s-rk3328-config -O .config
+          curl -fsSL https://raw.githubusercontent.com/szdosar/lede-for-r2s/main/r2s-rk3328-config >> .config
           
       - name: SSH connection to Actions
         uses: p3terx/debugger-action@main
