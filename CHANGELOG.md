@@ -1,6 +1,6 @@
 ## 20201024
 * 默认IP改为192.168.2.1
-* 1
+* 1-2
 
 ## 20201022
 * cd lede && sed -i -E 's/#(src-git.+)(helloworld.+)/\1\2/' feeds.conf.default && sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
