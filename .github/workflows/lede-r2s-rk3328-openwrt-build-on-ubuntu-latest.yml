@@ -6,7 +6,7 @@ on:
       - 'CHANGELOG-ubuntu-latest.md'
 
 env:
-  SSH_ACTIONS: false
+  SSH_ACTIONS: true
 
 jobs:
   build:
